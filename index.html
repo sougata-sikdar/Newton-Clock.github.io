@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Newton Clock</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*
+		{
+			margin: 0;
+			padding: 0;
+
+		}
+
+		html
+		{
+			font-size: 62.5%;
+		}
+
+		@media(max-width: 998px)
+		{
+			html
+			{
+				font-size: 32.5%;
+			}
+
+			.second_div span::before
+		{
+			content: '';
+			
+			display: block;
+			transform: translateX(-50%);
+			bottom: 0%;
+			position: absolute;
+			box-shadow: var(--ball-boxshadow); 
+
+
+		}
+		}
+		:root
+		{
+			--color: blue;
+			--bgcolor: gray;
+			--bordercolor: orange;
+			--center-boxshadow:  0 1.4rem 0.8rem rgba(0, 0, 0, 0.25), 0 1rem 2.8rem rgba(0, 0, 0, 0.45);
+			--ball-boxshadow:  0 1.4rem 0.8rem rgba(0, 0, 0, 0.25), 0 1rem 2.8rem rgba(0, 0, 0, 0.45);
+
+
+
+
+		}
+			
+
+		.main_div
+		{
+			/* background-color: var(--bgcolor); */
+			width: 100vw;
+			height: 100vh;
+			display: grid;
+			place-items: center;
+
+		}
+		.second_div
+		{
+			height: 50%;
+			width: 60%;
+			border: 0.2rem solid blue;
+			border-bottom-width: 2rem;
+
+			background-color: orange;
+			
+			box-shadow: var(--center-boxshadow);
+			display: flex;
+			justify-content: center;
+			
+		}
+
+		.second_div span
+		{
+			width: 0.2rem;
+			height: 55%;
+			background-color: white;
+			display: block;
+			margin: 0 2rem;
+			position: relative;
+
+			/* ************** */
+			transform-origin: top;
+
+		}
+		.second_div span::before
+		{
+			content: '';
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			background-color: white;
+			display: block;
+			transform: translateX(-50%);
+			bottom: -17%;
+			position: absolute;
+			box-shadow: var(--ball-boxshadow); 
+
+
+		}
+
+		.second_div span:first-child
+		{
+			animation: leftball 2s linear infinite;
+		}
+
+		@keyframes leftball
+		{
+			0%
+			{
+				transform: rotate(0deg);
+			}
+			20%
+			{
+				transform: rotate(50deg);
+			}
+			50%
+			{
+				transform: rotate(0deg);
+			}
+			100%
+			{
+				transform: rotate(0deg);
+			}
+		}
+
+		.second_div span:last-child
+		{
+			animation: rightball 2s 1s linear infinite;
+		}
+
+		@keyframes rightball
+		{
+			0%
+			{
+				transform: rotate(0deg);
+			}
+			20%
+			{
+				transform: rotate(-50deg);
+			}
+			50%
+			{
+				transform: rotate(0deg);
+			}
+			100%
+			{
+				transform: rotate(0deg);
+			}
+	</style>
+</head>
+<body>
+
+<div class="main_div">
+
+	<div class="second_div">
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	</div>
+
+</div>
+	
+</body>
+</html>
